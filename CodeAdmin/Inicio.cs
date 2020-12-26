@@ -18,13 +18,6 @@ namespace CodeAdmin
             InitializeComponent();
         }
 
-        static void CS(string[] args)
-        {
-            //string cs = @"server=207.180.246.84;userid=paco_codeadmin;password=H9vYFL9lF4XyriTn;database=paco_codeadmin";
-            //var con = new MySqlConnection(cs);
-            //con.Open();
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: esta línea de código carga datos en la tabla 'paco_codeadminDataSet.cad_categories' Puede moverla o quitarla según sea necesario.
