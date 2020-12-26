@@ -13,6 +13,8 @@ namespace CodeAdmin
 {
     public partial class Inicio : Form
     {
+        private static string cs = @"server=207.180.246.84;userid=paco_codeadmin;password=H9vYFL9lF4XyriTn;database=paco_codeadmin";
+
         public Inicio()
         {
             InitializeComponent();
@@ -36,24 +38,44 @@ namespace CodeAdmin
 
         private void ButtonFSave_Click(object sender, EventArgs e)
         {
-            string Fname = textBoxFName.Text;
-            string Fdesc = textBoxFDescription.Text;
-            int Fproject = (int)comboBoxFProject.SelectedValue;
-            int Fcategory = (int)comboBoxFCategory.SelectedValue;
 
-            textBox1.Text = Fproject.ToString();
-            textBox2.Text = Fcategory.ToString();
-
-            string cs = @"server=207.180.246.84;userid=paco_codeadmin;password=H9vYFL9lF4XyriTn;database=paco_codeadmin";
             string NewFeatureQuery = "INSERT INTO `cad_features` (`Fcod`, `Fname`, `Fproject`, `Fdescription`, `Fcategory`, `fcomplete`) VALUES (NULL, '"+textBoxFName.Text+"', '"+comboBoxFProject.SelectedValue+"', '"+textBoxFDescription.Text+"', '"+comboBoxFCategory.SelectedValue+"', '0')";
-            MySqlConnection MyConn2 = new MySqlConnection(cs);
+            MySqlConnection MyConn2 = new MySqlConnection(Inicio.cs);
             MySqlCommand MyCommand2 = new MySqlCommand(NewFeatureQuery, MyConn2);
             MySqlDataReader MyReader2;
             MyConn2.Open();
             MyReader2 = MyCommand2.ExecuteReader();
 
         }
+        private void buttonFClean_Click(object sender, EventArgs e)
+        {
+            textBoxFName.Text = "";
+            textBoxFDescription.Text = "";
+
+            comboBoxFCategory.SelectedIndex = 0;
+            comboBoxFProject.SelectedIndex = 0;
+        }
 
         #endregion
+
+        #region Crear nueva Category
+        private void buttonCSave_Click(object sender, EventArgs e)
+        {
+            string NewCategoryQuery = "INSERT INTO `cad_categories` (`Ccod`, `Cname`, `Cdescription`) VALUES (NULL, '"+textBoxCName.Text+"', '"+textBoxCDesc.Text+"')";
+            MySqlConnection MyConn2 = new MySqlConnection(Inicio.cs);
+            MySqlCommand MyCommand2 = new MySqlCommand(NewCategoryQuery, MyConn2);
+            MySqlDataReader MyReader2;
+            MyConn2.Open();
+            MyReader2 = MyCommand2.ExecuteReader();
+        }
+        private void buttonCClean_Click(object sender, EventArgs e)
+        {
+            textBoxCName.Text = "";
+            textBoxCDesc.Text = "";
+        }
+
+        #endregion
+
+
     }
 }
