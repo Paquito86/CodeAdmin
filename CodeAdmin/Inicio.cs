@@ -27,6 +27,10 @@ namespace CodeAdmin
             // TODO: esta línea de código carga datos en la tabla 'paco_codeadminDataSet.cad_features' Puede moverla o quitarla según sea necesario.
             this.cad_featuresTableAdapter.Fill(this.paco_codeadminDataSet.cad_features);
         }
+        private void buttonFReload_Click(object sender, EventArgs e)
+        {
+            this.cad_featuresTableAdapter.Fill(this.paco_codeadminDataSet.cad_features);
+        }
 
         #region Crear nueva Feature
 
@@ -50,8 +54,6 @@ namespace CodeAdmin
 
         }
 
-
         #endregion
-
     }
 }

@@ -57,6 +57,7 @@ namespace CodeAdmin
             this.cad_categoriesTableAdapter = new CodeAdmin.paco_codeadminDataSetTableAdapters.cad_categoriesTableAdapter();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.buttonFReload = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cadfeaturesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paco_codeadminDataSet)).BeginInit();
@@ -286,23 +287,35 @@ namespace CodeAdmin
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(549, 353);
+            this.textBox1.Location = new System.Drawing.Point(1132, 9);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(39, 20);
+            this.textBox1.Size = new System.Drawing.Size(25, 20);
             this.textBox1.TabIndex = 4;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(594, 353);
+            this.textBox2.Location = new System.Drawing.Point(1163, 9);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(39, 20);
+            this.textBox2.Size = new System.Drawing.Size(25, 20);
             this.textBox2.TabIndex = 5;
+            // 
+            // buttonFReload
+            // 
+            this.buttonFReload.Font = new System.Drawing.Font("Verdana", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFReload.Location = new System.Drawing.Point(947, 27);
+            this.buttonFReload.Name = "buttonFReload";
+            this.buttonFReload.Size = new System.Drawing.Size(150, 33);
+            this.buttonFReload.TabIndex = 9;
+            this.buttonFReload.Text = "Recargar Tabla";
+            this.buttonFReload.UseVisualStyleBackColor = true;
+            this.buttonFReload.Click += new System.EventHandler(this.buttonFReload_Click);
             // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1200, 683);
+            this.Controls.Add(this.buttonFReload);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.groupBox1);
@@ -353,6 +366,7 @@ namespace CodeAdmin
         private paco_codeadminDataSetTableAdapters.cad_categoriesTableAdapter cad_categoriesTableAdapter;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button buttonFReload;
     }
 }
 
